@@ -2,12 +2,15 @@
   "name": "jin-themes",
   "displayName": "Jin Code Themes Collection",
   "description": "A collection of themes Blend of dark and light themes for VS Code",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "Jijin",
+   "license": "MIT",
+   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/jinthemes"
+    "url": "https://github.com/JijinJayakumar/jin-themes"
   },
+  "homepage": "https://github.com/JijinJayakumar/jin-themes#readme",
   "engines": {
     "vscode": "^1.94.0"
   },
