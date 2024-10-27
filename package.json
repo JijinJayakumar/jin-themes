@@ -2,15 +2,26 @@
   "name": "jin-themes",
   "displayName": "Jin Code Themes Collection",
   "description": "A collection of themes Blend of dark and light themes for VS Code",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "Jijin",
-   "license": "MIT",
-   "icon": "images/icon.png",
+  "license": "MIT",
+"icon": "icons/icon.png",
+  "galleryBanner": {
+    "color": "#1F2430",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/JijinJayakumar/jin-themes"
   },
   "homepage": "https://github.com/JijinJayakumar/jin-themes#readme",
+  "badges": [
+    {
+      "url": "https://img.shields.io/visual-studio-marketplace/v/Jijin.jin-themes",
+      "href": "https://marketplace.visualstudio.com/items?itemName=Jijin.jin-themes",
+      "description": "VS Code Marketplace Version"
+    }
+  ],
   "engines": {
     "vscode": "^1.94.0"
   },
@@ -40,7 +51,7 @@
         "path": "./themes/Jfunky-minimal-dark-color-theme.json"
       }
     ],
-     "configuration": {
+    "configuration": {
       "title": "Jin Themes",
       "properties": {
         "jinThemes.cursorEffects": {
@@ -79,7 +90,6 @@
         }
       }
     }
-  
   },
   "extensionDependencies": [],
   "recommendations": {
@@ -120,7 +130,8 @@
   ],
   "main": "./extension.js",
   "devDependencies": {
+    "@types/node": "^16.x",
     "@types/vscode": "^1.94.0",
-    "@types/node": "^16.x"
+    "sharp": "^0.33.5"
   }
 }
