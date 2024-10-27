@@ -1,0 +1,35 @@
+{
+  // Font settings
+  "editor.fontFamily": "JetBrains Mono, 'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.5,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+
+  // Font rendering
+  "workbench.fontAliasing": "antialiased",
+
+  // Custom font styles for different code elements
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["comment", "comment.line", "comment.block"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": ["keyword", "storage.type", "storage.modifier"],
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": ["string", "string.quoted"],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "name": "jin-themes",
+  "displayName": "Jin code Themes Collection",
+  "description": "A collection of themes Blend of dark and light themes for VS Code",
+  "version": "0.0.1",
+  "publisher": "Jijin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JijinJayakumar/jin-themes"
+  },
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "J charcoal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Jcharcoal-color-theme.json"
+      },
+      {
+        "label": "J Dark Material v2",
+        "uiTheme": "vs-dark",
+        "path": "./themes/JDarkMaterial-color-theme.json"
+      },
+      {
+        "label": "J Charcoal Light",
+        "uiTheme": "vs",
+        "path": "./themes/Jcharcoal-light-color-theme.json"
+      },
+      {
+        "label": "J Funky Minimal Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Jfunky-minimal-dark-color-theme.json"
+      }
+    ],
+    "configuration": {
+      "title": "Jin Themes",
+      "properties": {
+        "jinThemes.cursorEffects": {
+          "type": "object",
+          "default": {
+            "J charcoal": {
+              "cursorStyle": "line",
+              "cursorBlinking": "solid",
+              "powerMode.enabled": false,
+              "cursorSmoothCaretAnimation": true,
+              "cursorWidth": 2
+            },
+            "J Dark Material v2": {
+              "cursorStyle": "block",
+              "cursorBlinking": "smooth",
+              "powerMode.enabled": false,
+              "cursorSmoothCaretAnimation": true,
+              "powerMode.backgroundMode": "simple"
+            },
+            "J Charcoal Light": {
+              "cursorStyle": "line",
+              "cursorBlinking": "phase",
+              "powerMode.enabled": false,
+              "cursorSmoothCaretAnimation": true,
+              "cursorWidth": 2
+            },
+            "J Funky Minimal Dark": {
+              "cursorStyle": "block",
+              "cursorBlinking": "phase",
+              "powerMode.enabled": true,
+              "powerMode.presets": "fireworks",
+              "powerMode.backgroundMode": "particles",
+              "powerMode.explosionDuration": 1000,
+              "powerMode.explosionSize": 15,
+              "powerMode.shakeDuration": 0.5,
+              "powerMode.shakeIntensity": 2
+            }
+          },
+          "description": "Cursor effects configuration for different themes"
+        }
+      }
+    }
+  },
+  "extensionDependencies": [
+    "hoovercj.vscode-power-mode",
+    "eryouhao.brackets-light",
+    "qinjia.seti-icons"
+  ],
+  "recommendations": {
+    "fonts": [
+      {
+        "name": "JetBrains Mono",
+        "url": "https://www.jetbrains.com/lp/mono/"
+      },
+      {
+        "name": "Fira Code",
+        "url": "https://github.com/tonsky/FiraCode"
+      }
+    ]
+  },
+  "keywords": [
+    "theme",
+    "dark theme",
+    "charcoal",
+    "material",
+    "jin themes",
+    "jcharcoal",
+    "J Dark Material v2",
+    "Jin Code Themes",
+    "Jijin",
+    "material theme",
+    "light theme",
+    "charcoal light",
+    "J Charcoal Light",
+    "J Funky Minimal Dark",
+    "funky minimal light"
+  ],
+  "scripts": {
+    "postinstall": "node ./scripts/configure-cursor.js",
+    "preuninstall": "node ./scripts/cleanup-cursor.js",
+    "configure": "node ./scripts/configure-cursor.js"
+  },
+  "activationEvents": [
+    "onCommand:workbench.action.selectTheme"
+  ],
+  "main": "./extension.js",
+  "dependencies": {
+    "jin-themes": "file:"
+  }
+}
