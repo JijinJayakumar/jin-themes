@@ -1,41 +1,42 @@
+// cleanup-cursor.js
 const fs = require('fs');
-const path = require('path');
+const { getSettingsPath } = require('./shared-constants');
 
 function cleanupCursor() {
     try {
-        // Path to user's VS Code settings
-        const userSettingsPath = path.join(process.env.APPDATA, 'Code', 'User', 'settings.json');
+        const userSettingsPath = getSettingsPath();
         
         if (fs.existsSync(userSettingsPath)) {
-            // Read existing settings
             const content = fs.readFileSync(userSettingsPath, 'utf8');
-            // Remove any BOM and normalize line endings
             const normalizedContent = content.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
             let settings = JSON.parse(normalizedContent);
 
-            // Remove cursor settings
-            const settingsToRemove = [
-                "editor.cursorStyle",
-                "editor.cursorBlinking",
-                "editor.cursorSmoothCaretAnimation",
-                "editor.smoothScrolling",
-                "editor.cursorWidth"
-            ];
+            // Restore original settings if they exist
+            if (settings._jinThemesOriginalSettings) {
+                const originalSettings = settings._jinThemesOriginalSettings;
+                
+                // Restore each setting
+                if (originalSettings.cursorStyle) settings["editor.cursorStyle"] = originalSettings.cursorStyle;
+                if (originalSettings.cursorBlinking) settings["editor.cursorBlinking"] = originalSettings.cursorBlinking;
+                if (originalSettings.cursorSmoothCaretAnimation) settings["editor.cursorSmoothCaretAnimation"] = originalSettings.cursorSmoothCaretAnimation;
+                if (originalSettings.smoothScrolling) settings["editor.smoothScrolling"] = originalSettings.smoothScrolling;
+                if (originalSettings.cursorWidth) settings["editor.cursorWidth"] = originalSettings.cursorWidth;
+                if (originalSettings.colorCustomizations) settings["workbench.colorCustomizations"] = originalSettings.colorCustomizations;
 
-            settingsToRemove.forEach(setting => {
-                delete settings[setting];
-            });
+                // Remove the backup
+                delete settings._jinThemesOriginalSettings;
+            }
 
             // Remove theme-specific cursor colors
             if (settings["workbench.colorCustomizations"]) {
-                const themesToRemove = [
+                const themesToClean = [
                     "[J charcoal]",
                     "[J Dark Material v2]",
                     "[J Charcoal Light]",
                     "[J Funky Minimal Dark]"
                 ];
 
-                themesToRemove.forEach(theme => {
+                themesToClean.forEach(theme => {
                     if (settings["workbench.colorCustomizations"][theme]) {
                         delete settings["workbench.colorCustomizations"][theme];
                     }
@@ -53,7 +54,7 @@ function cleanupCursor() {
         }
     } catch (error) {
         console.error('Error:', error.message);
-        console.log('Settings path:', path.join(process.env.APPDATA, 'Code', 'User', 'settings.json'));
+        console.log('Attempted settings path:', getSettingsPath());
     }
 }
 

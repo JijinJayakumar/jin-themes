@@ -1,8 +1,8 @@
 {
   "name": "jin-themes",
-  "displayName": "Jin Code Themes Collection",
-  "description": "A collection of themes Blend of dark and light themes for VS Code",
-  "version": "1.0.2",
+  "displayName": "Jin Code Themes - Zen Collection",
+  "description": "Thoughtfully crafted minimal light and dark theme for peaceful, distraction-free coding",
+  "version": "1.0.3",
   "publisher": "Jijin",
   "license": "MIT",
 "icon": "icons/icon.png",
@@ -29,6 +29,12 @@
     "Themes"
   ],
   "contributes": {
+      "commands": [
+      {
+        "command": "jinThemes.resetCursorSettings",
+        "title": "Jin Themes: Reset Cursor Settings"
+      }
+    ],
     "themes": [
       {
         "label": "J charcoal",
@@ -84,6 +90,29 @@
               "editor.cursorSmoothCaretAnimation": "on",
               "editor.cursorWidth": 4,
               "editor.smoothScrolling": true
+            },
+            "cursorSettings": {
+              "J charcoal": {
+                "background": "#000000",
+                "foreground": "#FFCC66"
+              },
+              "J Dark Material v2": {
+                "background": "#000000",
+                "foreground": "#89DDFF"
+              },
+              "J Charcoal Light": {
+                "background": "#FFFFFF",
+                "foreground": "#FF9940"
+              },
+              "J Funky Minimal Dark": {
+                "background": "#000000",
+                "foreground": "#FF00FF"
+              }
+            },
+            "cursorStyle": {
+              "style": "line",
+              "width": 2,
+              "blinkAnimation": "smooth"
             }
           },
           "description": "Smooth thick cursor settings for different themes"
@@ -118,7 +147,14 @@
     "light theme",
     "charcoal light",
     "J Charcoal Light",
-    "J Funky Minimal Dark"
+    "J Funky Minimal Dark",
+    "funky minimal dark",
+    "ji2n serenity",
+    "serenity",
+    "jin themes",
+    "Jin Themes",
+    "Ji2n Serenity", "Minimal Theme"
+    
   ],
   "scripts": {
     "postinstall": "node ./scripts/configure-cursor.js",

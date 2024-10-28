@@ -2,6 +2,13 @@
   "name": "Jcharcoal",
   "$schema": "vscode://schemas/color-theme",
   "type": "dark",
+  "workbench.settings": {
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorWidth": 3,
+    "editor.smoothScrolling": true
+  },
   "colors": {
     // ------------- activityBar -------------
     "activityBar.background": "#1F2430",
@@ -138,9 +145,6 @@
     "extensionButton.prominentForeground": "#1F2430",
     "extensionButton.prominentHoverBackground": "#fac761",
 
-    // "panelSectionHeader.border": "#ff0000",
-    // "panel.dropBorder": "#ff0000",
-
     "focusBorder": "#0000",
     "foreground": "#707a8c",
 
@@ -151,10 +155,6 @@
     "gitDecoration.modifiedResourceForeground": "#77A8D9",
     "gitDecoration.submoduleResourceForeground": "#d4bfffb3",
     "gitDecoration.untrackedResourceForeground": "#A6CC70",
-
-    // "searchEditor.textInputBorder": "#d4bfffb3",
-    // "searchEditor.findMatchBackground": "#d4bfffb3",
-    // "searchEditor.findMatchBorder": "#d4bfffb3",
 
     "input.background": "#1a1d29",
     "input.border": "#0000",
@@ -301,7 +301,7 @@
 
     // tab.active
     "tab.activeBackground": "#171C24",
-    "tab.activeBorder": "#171C24",
+"tab.activeBorder": "#171C24",
     "tab.activeBorderTop": "#ffcc66",
     "tab.activeForeground": "#CBCCC6",
     "tab.activeModifiedBorder": "#FF9944",
@@ -400,7 +400,7 @@
     "debugToolBar.border": "#0000",
     "toolbar.hoverOutline": "#0000"
   },
-  "workbench.sash.size": 2,
+
 
   "semanticHighlighting": true,
   "semanticTokenColors": {
@@ -412,14 +412,13 @@
 
     "comment": { "foreground": "#5C6773", "fontStyle": "italic" },
 
-    "event": {},
 
     "string": { "foreground": "#BAE67E", "fontStyle": "" },
 
     "customLiteral": "#DCDCAA",
 
-    "function.declaration": { "foreground": "#61AFEF", "fontStyle": "" }, // Updated
-    "function": { "foreground": "#61AFEF", "fontStyle": "" }, // Updated
+    "function.declaration": { "foreground": "#61AFEF", "fontStyle": "" },
+    "function": { "foreground": "#61AFEF", "fontStyle": "" },
     "keyword.operator.new": "#FFD580",
 
     "method.declaration.async": "#FFD580",
@@ -448,7 +447,7 @@
   },
 
   "tokenColors": [
-    // -------------- 🔥 UNKNOWN -----------------
+   // -------------- 🔥 UNKNOWN -----------------
     {
       "scope": [
         "source meta.class meta.field.declaration meta.type.annotation keyword.operator"
@@ -949,6 +948,16 @@
       "scope": "punctuation.definition.markdown",
       "settings": { "foreground": "#5c6773", "fontStyle": "" }
     }
+  
   ],
-  "uuid": "32bd64fa-d60a-4858-a5fc-5164cc49a2b8"
+  "uuid": "32bd64fa-d60a-4858-a5fc-5164cc49a2b8",
+  
+  // Added cursor and scrolling settings
+  "editor": {
+    "cursorStyle": "line",
+    "cursorBlinking": "expand",
+    "cursorSmoothCaretAnimation": "on",
+    "cursorWidth": 3,
+    "smoothScrolling": true
+  }
 }
