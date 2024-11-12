@@ -8,12 +8,7 @@
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorWidth": 3,
-    "editor.smoothScrolling": true,
-    // Adding rounded corners to UI elements
-    "window.menuBarVisibility": "compact",
-    "editor.roundedSelection": true,
-    "workbench.tree.indent": 12,
-    "workbench.tree.renderIndentGuides": "always"
+    "editor.smoothScrolling": true
   },
   "colors": {
     // Core editor colors
@@ -26,12 +21,7 @@
     "editor.findMatchBorder": "#FF9944",
     "editor.findMatchHighlightBackground": "#0000",
     "editor.findMatchHighlightBorder": "#ffcc66ae",
-    "editor.wordHighlightBorder": "#FFD58066",
-    "editor.wordHighlightBackground": "#FFD58015",
-    "editorLineNumber.activeForeground": "#FFD580",
-    "editorCursor.foreground": "#FFD580",
-    "editorCursor.background": "#1F2430",
-    // Enhanced Console Colors with Neon Effects
+    // Enhanced Console Colors - Removed grape, using more blues and cyans
     "terminal.background": "#1A1E2A",
     "terminal.foreground": "#CBCCC6",
     "terminal.ansiBlack": "#191e2a",
@@ -52,7 +42,7 @@
     "terminal.ansiYellow": "#fad07b",
     "terminalCursor.background": "#232834",
     "terminalCursor.foreground": "#ffcc66",
-    // Sidebar and UI Elements
+    // Sidebar and UI Elements - More consistent with your preferred palette
     "sideBar.background": "#1A1E2A",
     "sideBar.foreground": "#8A91A6",
     "sideBar.border": "#191e2a",
@@ -95,32 +85,24 @@
     "button.hoverBackground": "#ffd580"
   },
   "semanticTokenColors": {
-    "*.declaration": {
-      "foreground": "#FFD580",
-      "bold": true,
-      "textDecoration": "underline"
-    },
+    "*.declaration": "#FFD580", // Changed from grape to warm yellow
     "class": {
       "foreground": "#F29E74",
-      "fontStyle": "bold"
+      "fontStyle": ""
     },
-    "class.declaration": {
-      "foreground": "#5CCFE6",
-      "fontStyle": "bold",
-      "textDecoration": "none; text-shadow: 0 0 2px #5CCFE6, 0 0 4px #5CCFE680"
-    },
+    "class.declaration": "#5CCFE6",
+    "class.defaultLibrary": "#5CCFE6",
     "interface": {
-      "foreground": "#73d0ff",
-      "fontStyle": "bold",
-      "textDecoration": "none; text-shadow: 0 0 2px #73d0ff, 0 0 4px #73d0ff80"
+      "foreground": "#73d0ff", // Changed to blue instead of grape
+      "fontStyle": ""
     },
     "type": {
-      "foreground": "#73d0ff",
-      "fontStyle": "bold"
+      "foreground": "#73d0ff", // Changed to blue instead of grape
+      "fontStyle": ""
     },
     "parameter": {
-      "foreground": "#FFD580",
-      "fontStyle": "italic"
+      "foreground": "#FFD580", // Changed from grape to warm yellow
+      "fontStyle": ""
     },
     "variable": {
       "foreground": "#CBCCC6",
@@ -128,26 +110,23 @@
     },
     "property": {
       "foreground": "#FF9944",
-      "fontStyle": "italic"
+      "fontStyle": ""
     },
     "property.declaration": {
       "foreground": "#FF9944",
-      "fontStyle": "bold"
+      "fontStyle": ""
     },
     "function": {
       "foreground": "#FFD580",
-      "fontStyle": "bold",
-      "textDecoration": "none; text-shadow: 0 0 2px #FFD580, 0 0 4px #FFD58080, 0 0 6px #FFD58040"
+      "fontStyle": ""
     },
     "function.declaration": {
       "foreground": "#FFD580",
-      "fontStyle": "bold",
-      "textDecoration": "none; text-shadow: 0 0 2px #FFD580, 0 0 4px #FFD580, 0 0 8px #FFD58080"
+      "fontStyle": "bold"
     },
     "method": {
       "foreground": "#FFD580",
-      "fontStyle": "bold",
-      "textDecoration": "none; text-shadow: 0 0 2px #FFD580, 0 0 4px #FFD58080"
+      "fontStyle": ""
     },
     "string": {
       "foreground": "#BAE67E",
@@ -155,33 +134,6 @@
     }
   },
   "tokenColors": [
-    // Enhanced function styling with neon effects
-    {
-      "scope": [
-        "entity.name.function",
-        "support.function",
-        "meta.function-call entity.name.function"
-      ],
-      "settings": {
-        "foreground": "#FFD580",
-        "fontStyle": "bold",
-        "textDecoration": "none; text-shadow: 0 0 2px #FFD580, 0 0 4px #FFD58080, 0 0 6px #FFD58040"
-      }
-    },
-    // Console and Logging with italic style
-    {
-      "scope": [
-        "support.class.console",
-        "support.function.console",
-        "entity.name.type.class.console",
-        "support.type.object.console",
-        "support.function.log"
-      ],
-      "settings": {
-        "foreground": "#F27983",
-        "fontStyle": "italic"
-      }
-    },
     // Object Properties and Keys
     {
       "scope": [
@@ -195,8 +147,7 @@
         "variable.other.object.property"
       ],
       "settings": {
-        "foreground": "#FF9944",
-        "fontStyle": "italic"
+        "foreground": "#FF9944"
       }
     },
     // Strings
@@ -230,7 +181,23 @@
         "fontStyle": "italic"
       }
     },
-    // Variables with special treatment
+    // Functions
+    {
+      "scope": "entity.name.function",
+      "settings": {
+        "foreground": "#FFD580",
+        "fontStyle": "bold"
+      }
+    },
+    // Keywords
+    {
+      "scope": "keyword",
+      "settings": {
+        "foreground": "#FF9944",
+        "fontStyle": ""
+      }
+    },
+    // Variables
     {
       "scope": [
         "variable.language.this",
@@ -238,26 +205,26 @@
       ],
       "settings": {
         "foreground": "#5CCFE6",
-        "fontStyle": "italic bold",
-        "textDecoration": "none; text-shadow: 0 0 2px #5CCFE6, 0 0 4px #5CCFE680"
+        "fontStyle": "italic"
       }
     },
-    // Numbers with subtle glow
+    // Numbers
     {
       "scope": "constant.numeric",
       "settings": {
-        "foreground": "#73d0ff",
-        "fontStyle": "",
-        "textDecoration": "none; text-shadow: 0 0 2px #73d0ff40"
+        "foreground": "#73d0ff", // Changed to blue instead of grape
+        "fontStyle": ""
       }
     },
-    // Keywords with subtle glow
+    // Console Specific
     {
-      "scope": "keyword",
+      "scope": [
+        "support.class.console",
+        "support.function.console"
+      ],
       "settings": {
-        "foreground": "#FF9944",
-        "fontStyle": "bold",
-        "textDecoration": "none; text-shadow: 0 0 2px #FF994440"
+        "foreground": "#F27983",
+        "fontStyle": ""
       }
     }
   ]

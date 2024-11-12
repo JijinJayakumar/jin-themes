@@ -33,7 +33,8 @@ function cleanupCursor() {
                     "[J charcoal]",
                     "[J Dark Material v2]",
                     "[J Charcoal Light]",
-                    "[J Funky Minimal Dark]"
+                    "[J Funky Minimal Dark]",
+                    "[J charcoal Classic]",
                 ];
 
                 themesToClean.forEach(theme => {

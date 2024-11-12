@@ -2,10 +2,10 @@
   "name": "jin-themes",
   "displayName": "Jin Code Themes - Zen Collection",
   "description": "Thoughtfully crafted minimal light and dark theme for peaceful, distraction-free coding",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "publisher": "Jijin",
   "license": "MIT",
-"icon": "icons/icon.png",
+  "icon": "icons/icon.png",
   "galleryBanner": {
     "color": "#1F2430",
     "theme": "dark"
@@ -23,13 +23,18 @@
     }
   ],
   "engines": {
-    "vscode": "^1.94.0"
+    "vscode": "^1.75.0"
   },
+  "browser": "./extension.js",
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "categories": [
     "Themes"
   ],
   "contributes": {
-      "commands": [
+    "commands": [
       {
         "command": "jinThemes.resetCursorSettings",
         "title": "Jin Themes: Reset Cursor Settings"
@@ -40,6 +45,11 @@
         "label": "J charcoal",
         "uiTheme": "vs-dark",
         "path": "./themes/Jcharcoal-color-theme.json"
+      },
+      {
+        "label": "J charcoal Classic",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Jcharcoal-color-theme-classic.json"
       },
       {
         "label": "J Dark Material v2",
@@ -91,8 +101,19 @@
               "editor.cursorWidth": 4,
               "editor.smoothScrolling": true
             },
+            "J charcoal Classic": {
+              "editor.cursorStyle": "line",
+              "editor.cursorBlinking": "smooth",
+              "editor.cursorSmoothCaretAnimation": "on",
+              "editor.cursorWidth": 3,
+              "editor.smoothScrolling": true
+            },
             "cursorSettings": {
               "J charcoal": {
+                "background": "#000000",
+                "foreground": "#FFCC66"
+              },
+              "J charcoal Classic": {
                 "background": "#000000",
                 "foreground": "#FFCC66"
               },
@@ -153,8 +174,8 @@
     "serenity",
     "jin themes",
     "Jin Themes",
-    "Ji2n Serenity", "Minimal Theme"
-    
+    "Ji2n Serenity",
+    "Minimal Theme"
   ],
   "scripts": {
     "postinstall": "node ./scripts/configure-cursor.js",
@@ -167,7 +188,11 @@
   "main": "./extension.js",
   "devDependencies": {
     "@types/node": "^16.x",
-    "@types/vscode": "^1.94.0",
-    "sharp": "^0.33.5"
+    "@types/vscode": "^1.75.0",
+    "sharp": "^0.33.5",
+      "vscode": "^1.1.37"
+  },
+  "dependencies": {
+  
   }
 }

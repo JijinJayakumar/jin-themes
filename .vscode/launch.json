@@ -5,10 +5,12 @@
 {
 	"version": "0.2.0",
 	"configurations": [
+
 		{
-			"name": "Extension",
+			"name": "Extension launch",
 			"type": "extensionHost",
 			"request": "launch",
+			"runtimeExecutable": "${execPath}",
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}"
 			]
